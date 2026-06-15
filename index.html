@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALMR Terrain Coverage Tiles</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+    .legend { background: #fff; padding: 8px 10px; font: 12px/1.4 sans-serif;
+              border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+    .legend i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; opacity: .7; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([61.20, -149.6], 9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { maxZoom: 17, attribution: '© OpenStreetMap' }).addTo(map);
+    L.tileLayer('almr_tiles/{z}/{x}/{y}.png',
+      { minZoom: 7, maxZoom: 13, maxNativeZoom: 13, opacity: 0.75,
+        attribution: 'ALMR terrain LOS coverage' }).addTo(map);
+
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function () {
+      var d = L.DomUtil.create('div', 'legend');
+      d.innerHTML = '<b>ALMR sites in view</b><br>' +
+        '<i style="background:#2c7bb6"></i>1 site (fringe)<br>' +
+        '<i style="background:#fdae61"></i>2–3 sites<br>' +
+        '<i style="background:#d7191c"></i>4+ sites (core)';
+      return d;
+    };
+    legend.addTo(map);
+  </script>
+</body>
+</html>
