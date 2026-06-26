@@ -20,9 +20,9 @@ The coverage layers map to the following signal strength thresholds:
 | **Orange** | `#ff7f00` | $-50$ to $-65\text{ dBm}$ | Strong |
 | **Green** | `#33a02c` | $-65$ to $-80\text{ dBm}$ | Good (Reliable portable coverage) |
 | **Blue** | `#1f78b4` | $-80$ to $-95\text{ dBm}$ | Moderate (Reliable vehicle coverage) |
-| **Purple** | `#984ea3` | $-95$ to $-110\text{ dBm}$ | Fringe (Marginal voice coverage) |
+| **Purple** | `#984ea3` | $-95$ to $-116\text{ dBm}$ | Fringe (Marginal voice coverage) |
 
-*Signal levels below $-110\text{ dBm}$ are considered out of range and are not rendered (transparent).*
+*Signal levels below $-116\text{ dBm}$ are considered out of range and are not rendered (transparent).*
 
 ---
 
