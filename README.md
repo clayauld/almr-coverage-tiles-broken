@@ -14,13 +14,13 @@ These tiles are generated in the sister repository [almr-coverage](file:///home/
 
 The coverage layers map to the following signal strength thresholds:
 
-| Color | Hex | Range | Signal Class / Quality |
-| :--- | :--- | :--- | :--- |
-| **Red** | `#e31a1c` | $\ge -50\text{ dBm}$ | Strongest (Excellent indoor/handheld) |
-| **Orange** | `#ff7f00` | $-50$ to $-65\text{ dBm}$ | Strong |
-| **Green** | `#33a02c` | $-65$ to $-80\text{ dBm}$ | Good (Reliable portable coverage) |
-| **Blue** | `#1f78b4` | $-80$ to $-95\text{ dBm}$ | Moderate (Reliable vehicle coverage) |
-| **Purple** | `#984ea3` | $-95$ to $-116\text{ dBm}$ | Fringe (Marginal voice coverage) |
+| Color      | Hex       | Range                      | Signal Class / Quality                |
+| :--------- | :-------- | :------------------------- | :------------------------------------ |
+| **Red**    | `#e31a1c` | $\ge -50\text{ dBm}$       | Strongest (Excellent indoor/handheld) |
+| **Orange** | `#ff7f00` | $-50$ to $-65\text{ dBm}$  | Strong                                |
+| **Green**  | `#33a02c` | $-65$ to $-80\text{ dBm}$  | Good (Reliable portable coverage)     |
+| **Blue**   | `#1f78b4` | $-80$ to $-95\text{ dBm}$  | Moderate (Reliable vehicle coverage)  |
+| **Purple** | `#984ea3` | $-95$ to $-116\text{ dBm}$ | Fringe (Marginal voice coverage)      |
 
 *Signal levels below $-116\text{ dBm}$ are considered out of range and are not rendered (transparent).*
 
@@ -49,6 +49,7 @@ Once hosted (e.g. via GitHub Pages), you can overlay this layer directly onto an
 3. Configure the source:
    - **Name**: `ALMR Terrain Coverage`
    - **Type**: `Tile`
-   - **URL Template**: `https://<your-username>.github.io/<your-repo>/almr_tiles/{z}/{x}/{y}.png` (Note: Ensure the hosting server sends the `Access-Control-Allow-Origin: *` header for CORS, which GitHub Pages does by default).
+   - **URL Template**: `https://<your-username>.github.io/<your-repo>/almr_tiles/{z}/{x}/{y}.png` 
+      - *(Note: Ensure the hosting server sends the `Access-Control-Allow-Origin: *` header for CORS, which GitHub Pages does by default).*
    - **Max Zoom**: `12`
 4. Click **Save**. You can now toggle the ALMR coverage overlay on any map canvas.
