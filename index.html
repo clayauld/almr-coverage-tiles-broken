@@ -26,10 +26,12 @@
     var legend = L.control({ position: 'bottomright' });
     legend.onAdd = function () {
       var d = L.DomUtil.create('div', 'legend');
-      d.innerHTML = '<b>ALMR sites in view</b><br>' +
-        '<i style="background:#2c7bb6"></i>1 site (fringe)<br>' +
-        '<i style="background:#fdae61"></i>2–3 sites<br>' +
-        '<i style="background:#d7191c"></i>4+ sites (core)';
+      d.innerHTML = '<b>ALMR Signal Strength</b><br>' +
+        '<i style="background:#e31a1c"></i>&ge; -50 dBm (Strongest)<br>' +
+        '<i style="background:#ff7f00"></i>-50 to -65 dBm (Strong)<br>' +
+        '<i style="background:#33a02c"></i>-65 to -80 dBm (Good)<br>' +
+        '<i style="background:#1f78b4"></i>-80 to -95 dBm (Moderate)<br>' +
+        '<i style="background:#984ea3"></i>-95 to -110 dBm (Fringe)';
       return d;
     };
     legend.addTo(map);
